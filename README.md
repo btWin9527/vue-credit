@@ -18,6 +18,15 @@
 + js框架 -- vue框架
 + ui框架 -- elementui
 + css -- scss
+```text
+    + sass和scss的区别
+        Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号(;)，而 SCSS 的语法书写和我们的 CSS 语法书写方式非常类似
+    + 依赖安装
+        + node-sass
+        【npm i node-sass --save-dev】
+        + sass-loader
+        【npm i sass-loader@7.3.1 --save-dev】
+```
 
 ## 4. 目录划分 (src目录下)
 

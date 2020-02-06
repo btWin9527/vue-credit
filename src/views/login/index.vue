@@ -1,6 +1,5 @@
 <template>
   <div class="login">
-
     <!--
          status-icon    是否在输入框中显示校验结果反馈图标
      -->
@@ -60,9 +59,10 @@
     }
   }
 </script>
-<style>
+<style lang="scss" scoped>
   .login {
     margin: 0 auto;
     max-width: 600px;
   }
+  $lightColor: #fff;
 </style>

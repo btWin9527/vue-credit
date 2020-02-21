@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import layoutRoutes from "./layoutRoutes/index";
 Vue.use(Router)
 const createRouter = () => new Router({
   /*
@@ -43,15 +43,14 @@ const scrollBehavior = (to, from, savedPosition) => {
 
   * */
   routes: [
-    {
-      path: '/',
-      redirect: '/index'
-    },
+    // 登录
     {
       path: '/login',
       name: 'login',
       component: () => import('_views/login') // 路由懒加载
     },
+    // layout相关路由
+    ...layoutRoutes,
   ]
 })
 

@@ -48,21 +48,29 @@
     },
     methods: {
       /*
-      * @methods submitLogin 提交校验表单
+      * @method submitLogin 提交校验表单
       * @params  ref         表单ref
       * */
       submitLogin(ref) {
         this.$refs[ref].validate((valid) => {
           if (!valid) return false;
         })
-      }
+      },
     }
   }
 </script>
 <style lang="scss" scoped>
+  $dark-border: #000;
   .login {
     margin: 0 auto;
     max-width: 600px;
+    /*
+    @method lighten          scss内置方法
+    @params {string} $color  十六进制颜色值
+    @params {string} opacity 百分比
+    @description: 通过修改百分比设置颜色
+     */
+    border: 1px solid lighten($dark-border, 70%);
   }
 
 </style>

@@ -54,6 +54,7 @@
       submitLogin(ref) {
         this.$refs[ref].validate((valid) => {
           if (!valid) return false;
+          this.$router.push('/');
         })
       },
     }

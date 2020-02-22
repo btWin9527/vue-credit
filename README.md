@@ -33,6 +33,7 @@
 + api           【接口api】
 + assets        【静态资源】
 + components    【公共组件】
++ constant    【常量配置】
 + layout        【布局容器】
 + router        【路由】
 + styles        【样式】
@@ -44,3 +45,13 @@
 + App.vue       【app最外层组件】
 + main.js       【入口文件】
 
+## 5. 接口文档
+
+```text
+# 接口文档
+http://47.96.117.121:5003/api-docs/
+# 用户名
+admin
+# 密码
+admin@123
+```

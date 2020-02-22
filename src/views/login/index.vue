@@ -30,7 +30,7 @@
 </template>
 <script>
   import Rules from "@/utils/rules"
-
+  import {mapActions} from 'vuex'
   export default {
     data() {
       return {
@@ -45,6 +45,9 @@
           password: '',
         }
       };
+    },
+    beforeMount() {
+      this.$store.dispatch('user/login', 111);
     },
     methods: {
       /*

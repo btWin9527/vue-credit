@@ -55,3 +55,12 @@ admin
 # 密码
 admin@123
 ```
+
+## 6. mysql配置
+
+```text
+# 启动mysql
+service mysql start　
+# 关闭服务
+service mysql stop　
+```

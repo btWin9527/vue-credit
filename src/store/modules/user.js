@@ -15,8 +15,13 @@ const mutations = {
 const actions = {
   login({commit}, userInfo) {
     const {account, password} = userInfo;
+    console.log(userInfo, 'userInfo')
     return new Promise((resolve, reject) => {
       login({account, password}).then(response => {
+        let {code, data} = response;
+        if (code === 20000) {// 本地存储和vuex存储用户token
+
+        }
         resolve(response);
       }).catch(err => {
         reject(err)

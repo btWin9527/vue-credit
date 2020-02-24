@@ -10,9 +10,9 @@
       :label-position="loginFormOpt.position"
       :label-width="loginFormOpt.labelWidth"
       :model="loginForm">
-      <el-form-item label="用户名" prop="username">
+      <el-form-item label="用户名" prop="account">
         <el-input
-          v-model="loginForm.username"
+          v-model="loginForm.account"
           autocomplete="off"
           placeholder="用户名"/>
       </el-form-item>
@@ -31,6 +31,7 @@
 <script>
   import Rules from "@/utils/rules"
   import {mapActions} from 'vuex'
+
   export default {
     data() {
       return {
@@ -41,15 +42,13 @@
           rules: Rules.loginRules
         },
         loginForm: { // 表单数据
-          username: '',
-          password: '',
+          account: 'admin',
+          password: 'admin@123',
         }
       };
     },
-    beforeMount() {
-      this.$store.dispatch('user/login', 111);
-    },
     methods: {
+      ...mapActions(['user/login']),
       /*
       * @method submitLogin 提交校验表单
       * @params  ref         表单ref
@@ -57,9 +56,21 @@
       submitLogin(ref) {
         this.$refs[ref].validate((valid) => {
           if (!valid) return false;
-          this.$router.push('/');
+          let {loginForm: {account, password}} = this;
+          this.handleLogin(account, password);
         })
       },
+      /*
+     * @method handleLogin 处理登录请求操作
+      * @params  ref         表单ref
+      * */
+      async handleLogin(account, password) {
+        console.log(account, 'account')
+        console.log(password, 'password')
+        let res = await this['user/login']({account, password});
+        console.log(res, 'res')
+        //   this.$router.push('/');
+      }
     }
   }
 </script>
